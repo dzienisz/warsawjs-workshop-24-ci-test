@@ -1,3 +1,5 @@
+import fetch from 'node-fetch'
+
 class ProductsService {
 
     products = 'http://localhost:3000/products';
