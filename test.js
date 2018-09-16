@@ -1,18 +1,26 @@
-import { default as ProductsService } from './service/ProductsService'
+import { default as ProductsService } from "./service/ProductsService";
+import FIXTURE from "./fixtures/data.json"
 
-const service = ProductsService(require('node-fetch'))
-
-test('is exist', () => {
-    expect(typeof service).toBe('object')
+const customFetch = Promise.resolve({
+  json: () => FIXTURE.products
 });
 
-test('fetching', async () => {
-    const products = await service.fetchList()
-    expect(Array.isArray(products)).toBeTruthy()
-    expect(products.length).toBeGreaterThan(0)
+const spy = jest.fn();
+spy.mockReturnValueOnce(customFetch)
+
+const service = ProductsService(spy);
+
+test("is exist", () => {
+  expect(typeof service).toBe("object");
 });
 
-test('fetching cached data', async () => {
-    const products = await service.fetchList()
-    expect(products.length).toBeGreaterThan(0)
+test("fetching", async () => {
+  const products = await service.fetchList();
+  expect(Array.isArray(products)).toBeTruthy();
+  expect(products.length).toBeGreaterThan(0);
+});
+
+test("fetching cached data", async () => {
+  const products = await service.fetchList();
+  expect(products.length).toBeGreaterThan(0);
 });
