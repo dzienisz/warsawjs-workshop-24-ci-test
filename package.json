@@ -1,0 +1,19 @@
+{
+  "name": "warsawjs-workshop-24-ci-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzienisz/warsawjs-workshop-24-ci-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzienisz/warsawjs-workshop-24-ci-test/issues"
+  },
+  "homepage": "https://github.com/dzienisz/warsawjs-workshop-24-ci-test#readme"
+}
