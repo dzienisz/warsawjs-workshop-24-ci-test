@@ -5,7 +5,8 @@
   "main": "test.js",
   "scripts": {
     "test": "jest",
-    "start:back-end": "json-server data.json"
+    "start:back-end": "json-server data.json",
+    "start:front-end": "webpack -w test.js -o dist/bundle.js --mode development"
   },
   "repository": {
     "type": "git",
